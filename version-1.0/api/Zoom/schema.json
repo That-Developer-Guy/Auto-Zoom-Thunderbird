@@ -1,0 +1,19 @@
+[{
+    "namespace": "Zoom",
+    "functions": [{
+            "name": "zoom",
+            "type": "function",
+            "async": false,
+            "parameters": [{
+                "name": "level",
+                "type": "integer"
+            }]
+        },
+        {
+            "name": "default",
+            "type": "function",
+            "async": false,
+            "parameters": []
+        }
+    ]
+}]

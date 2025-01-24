@@ -1,0 +1,63 @@
+{
+    "manifest_version": 2,
+    "name": "Auto Zoom",
+    "description": "Allows to zoom the text of the compose window as a preference or in real time.",
+    "version": "1.0",
+    "author": "That Developer Guy",
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "auto-zoom@extension.com",
+            "strict_min_version": "78.0"
+        }
+    },
+    "permissions": [
+        "compose",
+        "compose.send",
+        "storage"
+    ],
+    "compose_action": {
+        "default_label": "Auto Zoom",
+        "default_title": "Auto Zoom",
+        "default_icon": "icon.png",
+        "default_popup": "popup/popup.html"
+    },
+    "options_ui": {
+        "page": "options/options.html"
+    },
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": true
+    },
+    "icons": {
+        "64": "icon.png",
+        "32": "icon.png",
+        "16": "icon.png"
+    },
+    "content_scripts": [{
+        "matches": ["*://*/*"],
+        "run_at": "document_idle",
+        "all_frames": true
+    }],
+    "experiment_apis": {
+        "Zoom": {
+            "schema": "api/Zoom/schema.json",
+            "parent": {
+                "scopes": ["addon_parent"],
+                "paths": [
+                    ["Zoom"]
+                ],
+                "script": "api/Zoom/implementation.js"
+            }
+        },
+        "UnregisterButton": {
+            "schema": "api/UnregisterButton/schema.json",
+            "parent": {
+                "scopes": ["addon_parent"],
+                "paths": [
+                    ["UnregisterButton"]
+                ],
+                "script": "api/UnregisterButton/implementation.js"
+            }
+        }
+    }
+}

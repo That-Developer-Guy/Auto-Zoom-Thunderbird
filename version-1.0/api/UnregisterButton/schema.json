@@ -1,0 +1,16 @@
+[{
+    "namespace": "UnregisterButton",
+    "functions": [{
+            "name": "hide",
+            "type": "function",
+            "async": false,
+            "parameters": []
+        },
+        {
+            "name": "show",
+            "type": "function",
+            "async": false,
+            "parameters": []
+        }
+    ]
+}]
